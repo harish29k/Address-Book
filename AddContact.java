@@ -1,6 +1,6 @@
 package addressbook;
- 
- import java.util.ArrayList;
+  
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddContact extends PersonDetail {
@@ -38,10 +38,11 @@ public class AddContact extends PersonDetail {
 		System.out.println(contatctDetails.size());
 		for (int i = 0; i < contatctDetails.size(); i++) {
 			if (contatctDetails.get(i).getFirstName().equals(name)) {
-				System.out.printf("enter the number to update contact details 1 First Name 2 to update Last Name 3 to phone number 4 to pincode 5 to address 6 to email 7 to state");
+				System.out.printf(
+						"enter the number to update contact details 1 First Name 2 to update Last Name 3 to phone number 4 to pincode 5 to address 6 to email 7 to state");
 				int updateChoice = scanData.nextInt();
 				scanData.nextLine();
-				
+
 				switch (updateChoice) {
 				case 1:
 					System.out.println("enter the name to update");
@@ -92,12 +93,11 @@ public class AddContact extends PersonDetail {
 	public void deleteDetails(ArrayList<AddContact> contatctDetails) {
 		System.out.println("enter the name");
 		String name = scanData.nextLine();
-		for(int i = 0; i < contatctDetails.size(); i++ ) {
+		for (int i = 0; i < contatctDetails.size(); i++) {
 			if (contatctDetails.get(i).getFirstName().equals(name)) {
 				contatctDetails.remove(i);
-			} else 
+			} else
 				System.out.println("not match any details");
 		}
 	}
-
 }
